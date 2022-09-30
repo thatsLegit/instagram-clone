@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'simple_form'
 
+gem 'bootstrap-sass', '~> 3.3.5'
+gem 'sassc-rails', '>= 2.1.0'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -37,6 +40,7 @@ end
 
 group :development do
   gem 'solargraph'
+  gem 'htmlbeautifier'
   gem 'paperclip', '~> 4.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
