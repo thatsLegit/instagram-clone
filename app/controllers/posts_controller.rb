@@ -2,7 +2,9 @@
 
 class PostsController < ApplicationController
   # to avoid code repetition
+  before_action :authenticate_user!
   before_action :set_post, only: %i[show edit update destroy]
+  before_action :authorize_user, only: %i[edit update destroy]
 
   def index
     @posts = Post.all
@@ -10,12 +12,13 @@ class PostsController < ApplicationController
 
   def show; end
 
+  # current_user is a Devise helper method that gives the currently logged in user
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       flash[:success] = 'Your post has been created!'
@@ -46,6 +49,10 @@ class PostsController < ApplicationController
 
   # if you put private here, all below defined function are private
   private
+
+  def authorize_user
+    redirect_to root_path if current_user.id != @post.user.id
+  end
 
   def set_post
     @post = Post.find(params[:id])

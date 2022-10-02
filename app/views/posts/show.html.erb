@@ -2,7 +2,7 @@
   <div class='row'>
     <div class='post'>
       <div class='post-head'>
-        <div class="name">Ben Walker</div>
+        <div class="name"><%= @post.user.user_name %></div>
       </div>
       <div class='image'>
         <%= image_tag(@post.image.url(:medium), class:'img-responsive center-block') %>
@@ -12,8 +12,10 @@
       </p>
       <div class='text-center'>
         <%= link_to('Back to posts', posts_path)%>
-        |
-        <%= link_to('Edit', edit_post_path(@post))%>
+        <% if @post.user.id == current_user.id %>
+          |
+          <%= link_to('Edit', edit_post_path(@post))%>
+        <% end%>
       </div>
     </div>
   </div>
