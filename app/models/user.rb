@@ -7,4 +7,5 @@ class User < ApplicationRecord
 
   # careful here, the symbol is :postS, the model is however Post...
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

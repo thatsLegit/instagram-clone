@@ -1,0 +1,2 @@
+document.querySelector('#comments_<%= @post.id %>').innerHTML += "<%=j render 'comments/comment', post: @post, comment:
+@comment %>"; document.querySelector('#comment_content_<%= @post.id %>').value = '';

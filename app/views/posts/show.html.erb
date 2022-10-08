@@ -1,22 +1,10 @@
-<div class='posts-wrapper'>
-  <div class='row'>
-    <div class='post'>
-      <div class='post-head'>
-        <div class="name"><%= @post.user.user_name %></div>
-      </div>
-      <div class='image'>
-        <%= image_tag(@post.image.url(:medium), class:'img-responsive center-block') %>
-      </div>
-      <p class="caption">
-        <%= @post.caption %>
-      </p>
-      <div class='text-center'>
-        <%= link_to('Back to posts', posts_path)%>
-        <% if @post.user.id == current_user.id %>
-          |
-          <%= link_to('Edit', edit_post_path(@post))%>
-        <% end%>
-      </div>
-    </div>
+<div class='row posts-wrapper'>
+  <%= render 'post', post: @post %>
+  <div class='text-center edit-links'>
+    <%= link_to('Back to posts', posts_path)%>
+    <% if @post.user.id == current_user.id %>
+      |
+      <%= link_to('Edit', edit_post_path(@post))%>
+    <% end%>
   </div>
 </div>

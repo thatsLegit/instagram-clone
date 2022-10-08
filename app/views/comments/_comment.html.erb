@@ -1,0 +1,11 @@
+<%= content_tag(:div, class: 'comment', id: "comment_#{comment.id}") do %>
+  <p class='name'><%= comment.user.user_name %>&nbsp &nbsp</p>
+  <%= comment.content %>
+  <% if current_user == comment.user %>
+    <div style='margin: 0 0 0 auto'>
+      <%= link_to post_comment_path(post, comment), method: :delete, format: :js, remote: true do %>
+        <%= content_tag(:span, nil, class: ["glyphicon", "glyphicon-remove", "delete-comment-icon"]) %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
