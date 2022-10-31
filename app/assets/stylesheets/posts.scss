@@ -30,6 +30,7 @@
 .image {
   border-bottom: 1px solid #eeefef;
   border-top: 1px solid #eeefef;
+  margin: auto;
 }
 .caption {
   display: flex;
@@ -41,8 +42,4 @@
 .edit-links {
   margin-top: 20px;
   margin-bottom: 40px;
-}
-
-#post-edit-image {
-  margin-top: 20px;
 }

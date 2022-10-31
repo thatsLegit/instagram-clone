@@ -1,13 +1,12 @@
 <%# simple_form_for is a simple form function %>
 <%# posts_path is a rails function %>
-<div class='text-center'>
-  <%= image_tag(@post.image.url(:medium)) %>
-</div>
-<%= render('form', post: @post) %>
-<div class='text-center edit-links'>
-  <%= link_to('Cancel', post_path(@post))%>
-  |
-  <%= link_to("Delete", post_path(@post),
-            method: :delete,
-            data: { confirm: "Are you sure?" }) %>
+<div class='row'>
+  <%= render('form', post: @post) %>
+  <div class='text-center edit-links'>
+    <%= link_to('Cancel', post_path(@post))%>
+    |
+    <%= link_to("Delete", post_path(@post),
+              method: :delete,
+              data: { confirm: "Are you sure?" }) %>
+  </div>
 </div>
