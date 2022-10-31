@@ -1,3 +1,48 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post {
+  background-color: #fff;
+  border-color: #edeeee;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  margin-bottom: 60px;
+}
+.post-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
+  color: #125688;
+  font-size: 15px;
+  line-height: 18px;
+}
+.time-ago {
+  display: inline;
+  color: #a5a7aa;
+  float: right;
+}
+.image {
+  border-bottom: 1px solid #eeefef;
+  border-top: 1px solid #eeefef;
+}
+.caption {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+  font-size: 15px;
+  line-height: 18px;
+}
+.edit-links {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+#post-edit-image {
+  margin-top: 20px;
+}

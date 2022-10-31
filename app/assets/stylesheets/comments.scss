@@ -1,3 +1,32 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.delete-comment-icon {
+  float: right;
+  color: #515151;
+}
+.comment {
+  display: flex;
+  flex-direction: row;
+}
+.comment-like-form {
+  padding-top: 24px;
+  margin-top: 13px;
+  margin-left: 8px;
+  margin-right: 24px;
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #eeefef;
+  flex-direction: row;
+}
+.form-wrapper {
+  width: 60%;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 40px;
+  border: 1px solid #eeefef;
+  border-radius: 3px;
+}
