@@ -1,0 +1,4 @@
+document.querySelector('#paginator').innerHTML = ""; 
+
+document.querySelector('#posts').innerHTML += "<%=j render('posts') %>";
+document.querySelector('#paginator').innerHTML = "<%=j link_to_next_page(@posts, 'LOAD MORE', remote: true, id: 'load_more')%>";
