@@ -1,0 +1,4 @@
+<%= link_to 'Load more',
+    paginate_posts_path(:page => @posts.current_page + 1),
+    id: "load-more",
+    :remote => true unless @posts.last_page? %>

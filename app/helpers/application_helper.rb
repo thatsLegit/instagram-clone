@@ -9,4 +9,8 @@ module ApplicationHelper
       notice: 'alert-info'
     }[flash_type.to_sym] || flash_type.to_s
   end
+
+  def debug(msg)
+    Rails.logger.debug ActiveSupport::LogSubscriber.new.send(:color, msg, :yellow)
+  end
 end

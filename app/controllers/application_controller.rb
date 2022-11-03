@@ -2,8 +2,6 @@
 
 class ApplicationController < ActionController::Base
   def debug(msg)
-    logger.debug '@@@@@@@@@@@@@DEBUG_OUTPOUT@@@@@@@@@@@@@@@@@@'
-    logger.debug msg
-    logger.debug '@@@@@@@@@@@@@@@@@@@DEBUG_OUTPOUT@@@@@@@@@@@@@@@@@@@@@@@@@'
+    Rails.logger.debug ActiveSupport::LogSubscriber.new.send(:color, msg, :yellow)
   end
 end

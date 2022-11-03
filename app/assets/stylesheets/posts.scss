@@ -43,3 +43,29 @@
   margin-top: 20px;
   margin-bottom: 40px;
 }
+
+// pagination
+#paginator {
+  color: #4090db;
+  height: 120px;
+  width: 120px;
+  margin: 60px auto 40px;
+  position: relative;
+  display: table;
+  border: 2px solid #4090db;
+  border-radius: 50%;
+  :hover {
+    border: 1px solid #2d6da8;
+    border-radius: 50%;
+  }
+}
+#load-more {
+  display: table-cell;
+  font-size: 12px;
+  padding: 20px;
+  vertical-align: middle;
+  text-decoration: none;
+  a :hover {
+    color: #2d6da8;
+  }
+}

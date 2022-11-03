@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+
+  resources :paginate_posts, only: [:index]
 end

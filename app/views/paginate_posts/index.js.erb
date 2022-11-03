@@ -1,0 +1,3 @@
+document.querySelector('#posts').innerHTML += "<%=j render(partial: 'index') %>";
+document.querySelector('#paginator').innerHTML = "<%=j render(partial: 'load_more_link') %>";
+if(!document.querySelector('#load-more')) { document.querySelector('#paginator').remove() }

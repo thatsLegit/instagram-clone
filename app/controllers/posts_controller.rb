@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   before_action :authorize_user, only: %i[edit update destroy]
 
   def index
-    @posts = Post.all
+    @current_page = 1
+    @posts = Post.page(@current_page).per(2)
   end
 
   def show; end
