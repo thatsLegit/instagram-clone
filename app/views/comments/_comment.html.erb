@@ -3,7 +3,9 @@
   <%= comment.content %>
   <% if current_user == comment.user %>
     <div style='margin: 0 0 0 auto'>
-      <%= link_to post_comment_path(post, comment), method: :delete, format: :js, remote: true do %>
+      <%= link_to post_comment_path(post, comment), method: :delete, format: :js, remote: true, data: {
+        post_id: post.id, value: post.comments.count, confirm: "Are you sure?"
+      }, id: "delete-#{comment.id}", class: "delete-comment" do %>
         <%= content_tag(:span, nil, class: ["glyphicon", "glyphicon-remove", "delete-comment-icon"]) %>
       <% end %>
     </div>

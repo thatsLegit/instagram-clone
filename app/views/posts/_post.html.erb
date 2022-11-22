@@ -14,10 +14,19 @@
         <p class='user-name'><%= post.user.user_name %>&nbsp &nbsp</p>
         <%= post.caption %>
       </div>
-      <% if post.comments %>
+      <% if post.comments.any? %>
         <%= content_tag(:div, id: "comments_#{post.id}") do %>
-          <% post.comments.each do |comment| %>
+          <% post.comments.first(4).map do |comment| %>
             <%= render('comments/comment', comment: comment, post: post) %>
+          <% end %>
+
+          <% if post.comments.count > 4 %>
+            <%= content_tag(:div, id: "#comments-paginator-#{post.id}") do %>
+              <%= link_to "view all #{post.comments.count} comments",
+                          post_comments_path(post), remote: true, class: 'more-comments', id:
+                            "more_comments_#{post.id}", data: { post_id: "#{post.id}", type:
+                  "html, value:" "#{post.comments.count}" } %>
+            <% end %>
           <% end %>
         <% end %>
       <% end %>
@@ -28,7 +37,7 @@
         <div class='col-sm-11 comment-form'>
           <%= form_for([post, post.comments.build], format: :js, remote: true) do |f| %>
             <%= f.text_field :content, placeholder: 'Add a comment...', limit: 10, class: "comment_content",
-            id: "comment_content_#{post.id}", style: 'border: none' %>
+                             id: "comment_content_#{post.id}", style: 'border: none' %>
           <% end %>
         </div>
       </div>
